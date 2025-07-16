@@ -1,0 +1,350 @@
+:root {
+    --primary-color: #0077be;
+    --light-gray-bg: #f4f4f4;
+    --dark-text: #333;
+    --light-text: #fff;
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: var(--light-gray-bg);
+    color: var(--dark-text);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+/* Header */
+header {
+    background-color: var(--light-text);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative; /* Add this */
+    padding-right: 5rem; /* Add this */
+}
+
+header .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+header nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+header nav a {
+    font-size: 1.1rem; /* Increased font size for readability */
+    font-weight: 600;
+    padding: 5px 0;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s;
+}
+
+header nav a:hover,
+header nav a.active {
+    border-bottom-color: var(--primary-color);
+}
+
+.menu-icon {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1000; /* Add this */
+    position: absolute; /* Add this */
+    right: 2rem; /* Add this */
+}
+
+/* Hero Section */
+.hero {
+    background: url('images/imagen-imagen-3.0-generate-002-20250716-005729-0.jpg') no-repeat center center/cover;
+    color: var(--light-text);
+    text-align: center;
+    padding: 6rem 2rem;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.search-container input {
+    width: 400px;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px 0 0 5px;
+}
+
+.search-container button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+}
+
+/* Sections */
+.section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Plan Adventure Section */
+.icon-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.icon-box {
+    text-align: center;
+    width: 150px;
+    padding: 1rem;
+    border-radius: 10px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.icon-box:hover {
+    background-color: #e9f5fd;
+    transform: translateY(-5px);
+}
+
+.icon-box .icon {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Filter Bar */
+.filter-bar {
+    background-color: var(--light-text);
+    padding: 1rem 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.filter-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.filter-options span {
+    font-weight: bold;
+}
+
+.filter-options select {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Grid & Card Styles */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+}
+
+.hide {
+    display: none !important;
+}
+
+.card {
+    background-color: var(--light-text);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+}
+
+.image-container .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: var(--light-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.image-container:hover .overlay {
+    opacity: 1;
+}
+
+.card-content {
+    padding: 1.5rem;
+    flex-grow: 1; /* Allows content to fill space */
+}
+
+.card-content h3 {
+    margin-top: 0;
+}
+
+.button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+/* Detail Page Layout */
+.detail-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    text-align: left;
+}
+
+.detail-gallery {
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.detail-gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.detail-info h3 {
+    margin-top: 0;
+    font-size: 1.8rem;
+}
+
+.info-box {
+    background-color: #e9f5fd;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.disclaimer {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-text);
+    color: var(--light-text);
+    text-align: center;
+    padding: 2rem;
+    margin-top: auto; /* Pushes footer to bottom */
+}
+
+footer a {
+    color: #a7d8f0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 0; /* Changed from left to right */
+        width: auto; /* Changed from 100% to auto */
+        background-color: var(--light-text);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        border-radius: 8px;
+        padding: 1rem;
+        text-align: right; /* Align text to the right */
+    }
+
+    header nav.active {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .search-container input {
+        width: 60%;
+    }
+
+    .detail-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-options {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
